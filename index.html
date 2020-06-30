@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="Content/slick.css" rel="stylesheet" />
+    <link href="Content/slick-theme.css" rel="stylesheet" />
+</head>
+<style>
+    body {
+        background-color: #3498db;
+    }
+    
+    .slider {
+        width: 800px;
+        margin: 50px auto;
+        text-align: center;
+    }
+    
+    .slick-dots li button:before {
+        font-size: 20px;
+        color: whitesmoke;
+    }
+    
+    .your-class img {
+        width: 500px;
+        margin: 0 auto;
+    }
+    
+    .your-class2 img {
+        width: 200px;
+        margin: 10px;
+    }
+    
+    .your-class3 img {
+        width: 200px;
+        margin: 10px;
+    }
+    
+    .your-class3 .slick-center {
+        -moz-transform: scale(1.08);
+        -ms-transform: scale(1.08);
+        -o-transform: scale(1.08);
+        -webkit-transform: scale(1.08);
+        opacity: 1;
+        transform: scale(1.08);
+        transition: .4s all;
+    }
+    
+    .your-class3 img {
+        opacity: 0.8;
+        transition: all 300ms ease;
+    }
+</style>
+
+<body>
+    <!-- ví dụ 1  -->
+    <div class="your-class slider" role="toolbar">
+        <div><img src="./img/img1.png" alt=""></div>
+        <div><img src="./img/img2.png" alt=""></div>
+        <div><img src="./img/img3.png" alt=""></div>
+    </div>
+    <!-- ví dụ 2  -->
+    <div class="your-class2 slider" role="toolbar">
+        <img src="./img/img1.png" alt="">
+        <img src="./img/img2.png" alt="">
+        <img src="./img/img3.png" alt="">
+        <img src="./img/img1.png" alt="">
+        <img src="./img/img2.png" alt="">
+        <img src="./img/img3.png" alt="">
+    </div>
+    <!-- ví dụ 3 -->
+    <div class="your-class3 slider" role="toolbar">
+        <img src="./img/img1.png" alt="">
+        <img src="./img/img2.png" alt="">
+        <img src="./img/img3.png" alt="">
+        <img src="./img/img1.png" alt="">
+        <img src="./img/img2.png" alt="">
+        <img src="./img/img3.png" alt="">
+        <img src="./img/img1.png" alt="">
+        <img src="./img/img2.png" alt="">
+        <img src="./img/img3.png" alt="">
+        <img src="./img/img1.png" alt="">
+    </div>
+</body>
+<script src="Scripts/jquery-1.10.2.js"></script>
+<script src="Scripts/jquery-migrate-1.2.1.min.js"></script>
+<script src="Scripts/slick.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('.your-class').slick({
+            dots: true,
+            autoplay: true,
+            autoplaySpeed: 3000
+        });
+
+        $('.your-class2').slick({
+            dots: true,
+            infinite: true,
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            autoplay: true,
+            autoplaySpeed: 3000
+        });
+
+        $('.your-class3').slick({
+            dots: true,
+            centerMode: true,
+            centerPadding: '60px',
+            slidesToShow: 3,
+            autoplay: true,
+            autoplaySpeed: 3000,
+            responsive: [{
+                breakpoint: 768,
+                settings: {
+                    arrows: false,
+                    centerMode: true,
+                    centerPadding: '40px',
+                    slidesToShow: 3
+                }
+            }, {
+                breakpoint: 480,
+                settings: {
+                    arrows: false,
+                    centerMode: true,
+                    centerPadding: '40px',
+                    slidesToShow: 1
+                }
+            }]
+        });
+    });
+</script>
+
+</html>
